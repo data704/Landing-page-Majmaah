@@ -16,8 +16,8 @@
       "sub_title": "Automated satellite monitoring for transparent, verifiable tree planting impact. Real-time data, instant reports, and stakeholder confidence.",
       "btn_text": "Start Monitoring",
       "marque_label_1": "Daily satellite updates",
-      "marque_label_2": "10M+ trees monitored",
-      "marque_label_3": "Audit-ready reports"
+      "marque_label_2": "Multispectral and hyperspectral analysis",
+      "marque_label_3": "Species based carbon sequestration models"
     },
     "RightContent": {
       "card_title": "Project: Amazon Reforestation",
@@ -36,7 +36,7 @@
     }
   },
   "TrustedSection": {
-    "title": "Trusted by Leading Organizations",
+    "title": "Our partners",
     "stats": [
       { "label": "Projects Monitored", "value": "10,000+" },
       { "label": "Trees Verified", "value": "50+" },
