@@ -1,0 +1,334 @@
+{
+  "TabTitle": {
+    "title": "URIMPACT | Landing Page",
+    "description": "Urimpact landing page"
+  },
+  "Navbar": [
+    { "label": "Contact Us", "id": "contact-us" },
+    { "label": "Services", "id": "services" },
+    { "label": "See Forest", "id": "see-forest" }
+  ],
+  "HeroSection": {
+    "LeftContent": {
+      "chip_label": "Satellite Forest Monitoring",
+      "title": "Monitor Tree Planting Projects ",
+      "span_title": "From Space",
+      "sub_title": "Automated satellite monitoring for transparent, verifiable tree planting impact. Real-time data, instant reports, and stakeholder confidence.",
+      "btn_text": "Start Monitoring",
+      "marque_label_1": "Daily satellite updates",
+      "marque_label_2": "10M+ trees monitored",
+      "marque_label_3": "Audit-ready reports"
+    },
+    "RightContent": {
+      "card_title": "Project: Amazon Reforestation",
+      "card_chip_label": "Live",
+      "stats1_title": "2,450",
+      "stats1_sub_title": "Trees planted",
+      "stats1_count_per": "+12%",
+      "stats2_title": "94%",
+      "stats2_sub_title": "Survival rate",
+      "stats2_count_per": "+3%",
+      "stats3_title": "12.3t",
+      "stats3_sub_title": "CO₂ captured",
+      "stats3_count_per": "+8%",
+      "overlay_title": "New Detection",
+      "overlay_sub_title": "+156 trees verified"
+    }
+  },
+  "TrustedSection": {
+    "title": "Trusted by Leading Organizations",
+    "stats": [
+      { "label": "Projects Monitored", "value": "10,000+" },
+      { "label": "Trees Verified", "value": "50+" },
+      { "label": "Global Partners", "value": "3" }
+    ]
+  },
+  "ServicesSection": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive environmental monitoring solutions for every need",
+
+    "services": [
+      {
+        "title": "CSR Tree Planting System",
+        "description": "Satellite-verified tree planting certificates for corporate social responsibility initiatives. One-time or ongoing monitoring.",
+        "features": [
+          "Verification certificates",
+          "GPS-verified tree counts",
+          "Shareable impact reports"
+        ]
+      },
+      {
+        "title": "ESG Carbon Management",
+        "description": "Complete carbon management platform combining Scope 1 & 2 emissions tracking with satellite-verified tree planting offsets.",
+        "features": [
+          "Emissions tracking dashboard",
+          "Carbon offset integration",
+          "ESG reporting automation"
+        ]
+      },
+      {
+        "title": "Carbon Credit MRV",
+        "description": "Quarterly or annual monitoring, reporting, and verification for carbon credit projects. Meets international standards.",
+        "features": [
+          "Quarterly/annual reports",
+          "Carbon sequestration metrics",
+          "Compliance documentation"
+        ]
+      },
+      {
+        "title": "Agricultural Monitoring",
+        "description": "Precision agriculture monitoring with crop health analysis, NDVI mapping, and real-time alerts for irrigation.",
+        "features": [
+          "Crop health heatmaps",
+          "NDVI analysis",
+          "Yield optimization"
+        ]
+      }
+    ]
+  },
+  "ProblemSolution": {
+    "section_title": "Problem & Solution",
+    "section_sub_title": "Traditional vs. Automated Monitoring",
+
+    "problem_title": "Traditional Tree Monitoring Is Costly & Inefficient",
+    "problem_description": "Scope 3 and on-the-ground project verification are complex: inconsistent data, long audit cycles, poor supplier engagement, and limited ability to verify survival rates and carbon capture.",
+
+    "solution_title": "URIMPACT Provides Automated Satellite Monitoring",
+    "solution_description": "Automated satellite monitoring + AI-driven analysis provides continuous, verifiable, and auditable insights across every planting project.",
+
+    "button_text": "Watch Demo",
+
+    "manualProcessFeatures": [
+      {
+        "title": "Manual Field Visits",
+        "description": "Requires teams to physically visit sites, consuming time and resources"
+      },
+      {
+        "title": "Delayed Reporting",
+        "description": "Data collection and analysis takes weeks or months to complete"
+      },
+      {
+        "title": "Limited Coverage",
+        "description": "Difficult to monitor large or remote areas comprehensively"
+      },
+      {
+        "title": "High Costs",
+        "description": "Travel, personnel, and equipment expenses add up quickly"
+      }
+    ],
+    "benefits": [
+      {
+        "title": "Real-Time Data",
+        "description": "Continuous satellite monitoring provides up-to-date insights daily"
+      },
+      {
+        "title": "Full Coverage",
+        "description": "Monitor any location globally, regardless of size or accessibility"
+      },
+      {
+        "title": "Cost-Effective",
+        "description": "Eliminate travel costs and reduce personnel requirements significantly"
+      },
+      {
+        "title": "Transparent Reporting",
+        "description": "Automated reports and dashboards keep all stakeholders informed"
+      }
+    ]
+  },
+  "TabSection": {
+    "title": "Discover the Platform",
+    "tabs": [
+      "Onboarding",
+      "Dashboard",
+      "Scope 1,2,3",
+      "URIMPACT AI",
+      "Suppliers",
+      "Certificate"
+    ],
+    "subTabs": ["Dashboard 1", "Dashboard 2"]
+  },
+
+  "ServicesDetailsSection": {
+    "tick_icon_alt": "Check icon",
+    "services": [
+      {
+        "tag": "CSR Tree Planting System",
+        "title": "Satellite-Verified Tree Planting Certificates",
+        "desc": "Perfect for corporate social responsibility initiatives and sustainability commitments.",
+        "sub_desc": "Reports are structured to meet Verra VCS, Gold Standard, and other carbon credit certification requirements.",
+        "features": [
+          "Verification certificates",
+          "Satellite imagery proof",
+          "GPS-verified tree counts",
+          "Shareable impact reports",
+          "Shareable impact reports",
+          "Biodiversity assessment"
+        ]
+      },
+      {
+        "tag": "ESG Carbon Management",
+        "title": "Complete Carbon Management Platform",
+        "desc": "Combine Scope 1 & 2 emissions tracking with satellite-verified tree planting offsets.",
+        "sub_desc": "Automate ESG reporting for regulatory compliance and stakeholder transparency.",
+        "features": [
+          "Emissions tracking",
+          "AI-powered insights",
+          "Carbon offset integration",
+          "ESG reporting automation",
+          "Regulatory compliance",
+          "Stakeholder dashboards"
+        ]
+      },
+      {
+        "tag": "CARBON CREDIT MRV",
+        "title": "Quarterly/Annual Monitoring, Reporting & Verification",
+        "desc": "Comprehensive monitoring for carbon credit projects.",
+        "sub_desc": "Reports are automatically structured to meet international standards including Verra VCS, Gold Standard, and Plan Vivo.",
+        "features": [
+          "Quarterly/annual reports",
+          "Carbon sequestration metrics",
+          "Compliance documentation",
+          "Baseline assessments",
+          "Additionality verification",
+          "Third-party audit support"
+        ]
+      },
+      {
+        "tag": "AGRICULTURAL MONITORING",
+        "title": "Precision Agriculture From Space",
+        "desc": "",
+        "sub_desc": "Monitor crop health, optimize irrigation, detect pests early, and maximize yields with weekly satellite monitoring and AI powered insights.",
+        "features": [
+          "Crop health heatmaps",
+          "NDVI analysis",
+          "Irrigation alerts",
+          "Yield optimization",
+          "Pest detection",
+          "Historical performance"
+        ]
+      }
+    ]
+  },
+
+  "SeeForestSection": {
+    "title": "See Your Forest From Above",
+    "subtitle": "Monitor all your environmental projects in one unified dashboard with real-time satellite data and automated reporting.",
+    "image_alt": "Forest View Dashboard"
+  },
+  "CTASection": {
+    "title": "Ready to Monitor Your Forest Impact?",
+    "subtitle": "Join leading organizations using satellite technology for transparent tree monitoring.",
+    "primary_button": "Request a Demo",
+    "secondary_button": "Contact Sales"
+  },
+  "Footer": {
+    "logo_alt": "URIMPACT Logo",
+    "description": "Monitor your tree planting projects from space with automated satellite monitoring and AI-driven insights.",
+    "newsletter_title": "Subscribe to our newsletter",
+    "email_placeholder": "Enter your email",
+    "subscribe_button_aria": "Subscribe",
+    "send_icon_alt": "Send",
+
+    "company_title": "Company",
+    "contact_us": "Contact Us",
+    "services": "Services",
+    "see_forest": "See Forest",
+    "problems_&_solutions": "Problems & Solutions",
+
+    "legal_title": "Legal",
+    "privacy_policy": "Privacy Policy",
+    "terms_of_service": "Terms of Service",
+    "cookie_policy": "Cookie Policy",
+    "security": "Security",
+
+    "copyright": "© 2025 URIMPACT. All rights reserved."
+  },
+  "FooterModalData": {
+    "privacy": {
+      "title": "Privacy Policy",
+      "list": [
+        "We collect basic user information such as name, email, and organization during signup.",
+        "Satellite monitoring data is stored securely and used only for verification.",
+        "Your data is never sold to third-party advertisers.",
+        "We use encryption to protect sensitive documents and reports.",
+        "You may request deletion of your account at any time.",
+        "Cookies may be used to enhance platform experience.",
+        "Emails are sent only with consent.",
+        "Location data is used strictly for monitoring accuracy.",
+        "Uploaded documents remain your intellectual property.",
+        "Analytics stored for performance improvement.",
+        "Data access restricted internally.",
+        "Policy updates will be emailed to users."
+      ]
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "list": [
+        "Users must provide accurate project information.",
+        "Satellite images authorized only for verification.",
+        "Misuse may lead to account suspension.",
+        "Subscription fees non-refundable except policy conditions.",
+        "Do not reverse-engineer platform algorithms.",
+        "Reports can be shared publicly with attribution.",
+        "Users responsible for uploaded data.",
+        "Credentials must not be shared.",
+        "Platform features may update anytime.",
+        "Not liable for environmental changes.",
+        "Legal jurisdiction applies for disputes.",
+        "Continued use means acceptance of terms."
+      ]
+    },
+    "cookie": {
+      "title": "Cookie Policy",
+      "list": [
+        "Cookies store login sessions.",
+        "Analytics improve dashboard performance.",
+        "Tracks user interaction to improve UX.",
+        "No personal data collected without consent.",
+        "Can disable cookies anytime.",
+        "Used for map visualization functions.",
+        "Third-party analytics cookies may be used.",
+        "Preferences saved until cleared.",
+        "No marketing cookies used.",
+        "Performance cookies detect errors.",
+        "Temporary cookies expire on logout.",
+        "Use implies cookie consent."
+      ]
+    },
+    "security": {
+      "title": "Security",
+      "list": [
+        "End-to-end password encryption.",
+        "Secure cloud data storage.",
+        "Firewall layers block unauthorized access.",
+        "Monthly security audits.",
+        "2FA recommended for accounts.",
+        "Access logs monitored.",
+        "Backup servers prevent data loss.",
+        "Sensitive reports require verification.",
+        "Integrations reviewed for security.",
+        "No data sharing without approval.",
+        "Annual staff security training.",
+        "Breach alerts within 72 hours."
+      ]
+    }
+  },
+  "ContactModal": {
+    "title": "Please Fill This Details",
+    "submit_button": "Send",
+    "name_placeholder": "Full Name",
+    "email_placeholder": "Email Address",
+    "company_placeholder": "Company Name",
+    "industry_placeholder": "Select Industry",
+    "job_role_placeholder": "Job Role",
+    "country_placeholder": "Country",
+    "message_placeholder": "Your Message",
+    "industry_options": [
+      { "label": "Finance", "value": "finance" },
+      { "label": "Agriculture", "value": "agriculture" },
+      { "label": "Technology", "value": "technology" },
+      { "label": "Healthcare", "value": "health" },
+      { "label": "Manufacturing", "value": "manufacturing" }
+    ]
+  }
+}
