@@ -10,6 +10,12 @@ const socialIcons = [
     label: "LinkedIn",
     href: "https://www.linkedin.com/company/urimpact/",
   },
+  {
+    id: 2,
+    icon: "/icons/phone.svg",
+    label: "whatsapp",
+    href: "https://api.whatsapp.com/send?phone=966505527927",
+  },
   //   { id: 2, icon: "/icons/facebook.svg", label: "Facebook" },
   //   { id: 3, icon: "/icons/twitter.svg", label: "X" },
 ];
@@ -73,6 +79,9 @@ const Footer = () => {
                 alt={t("logo_alt")}
                 width={200}
                 height={50}
+                style={{
+                  objectFit: "contain",
+                }}
               />
               <p className="split text-sm leading-5 text-white/70">
                 {t("description")}
