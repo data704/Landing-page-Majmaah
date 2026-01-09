@@ -73,7 +73,7 @@ const Hero = () => {
             variant="contained"
             icon={ArrowIcon}
             onClick={() => {
-              window.open("https://urimpact.net/", "_blank");
+              window.open("https://dashboard.urimpact.sa/login", "_blank");
             }}
           />
           <div className="w-full overflow-hidden ">
