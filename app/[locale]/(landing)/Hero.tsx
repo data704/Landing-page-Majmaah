@@ -72,6 +72,9 @@ const Hero = () => {
             text={t("LeftContent.btn_text")}
             variant="contained"
             icon={ArrowIcon}
+            onClick={() => {
+              window.open("https://urimpact.net/", "_blank");
+            }}
           />
           <div className="w-full overflow-hidden ">
             <div className="marque-animation flex items-center gap-6 whitespace-nowrap overflow-hidden">
