@@ -77,7 +77,7 @@ const Hero = () => {
             }}
           />
           <div className="w-full overflow-hidden ">
-            <div className="marque-animation flex items-center gap-6 whitespace-nowrap overflow-hidden">
+            <div className="marque-animation flex items-center gap-6 whitespace-nowrap">
               <FlexBetween className="gap-2 items-center">
                 <Image
                   src="/icons/satellite.svg"
