@@ -42,14 +42,14 @@ const Trusted = () => {
             {partnersLogo.map((src, i) => (
               <div
                 key={i}
-                className="flex h-40 min-w-40 items-center justify-center"
+                className="flex h-30 min-w-40 max-w-40 max-h-40 items-center justify-center"
               >
                 <Image
                   src={src}
                   alt="partner logo"
                   width={400}
-                  height={160}
-                  className="h-40 w-auto max-w-full object-contain"
+                  height={120}
+                  className="h-30 max-h-30 w-auto max-w-full object-contain"
                 />
               </div>
             ))}
