@@ -22,6 +22,7 @@ export const partnersLogo = [
   "/images/partners/NCVC-Logo-Color-AR.svg",
   "/images/partners/prince-sattam-bin-abdullaziz-university.svg",
   "/images/partners/Saudi_Ministry_of_National_Guard_Logo.svg",
+  "/images/partners/wareef.svg",
 ];
 
 export const services: Service[] = [

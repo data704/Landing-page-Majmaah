@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import { gsap, SplitText, useGSAP } from "@/app/lib/gsap";
 
-import Chip from "./components/Chip";
+// import Chip from "./components/Chip";
 import Container from "./components/Container";
 
 import CSRIndexContent from "./CSRIndexContent";
@@ -23,9 +23,10 @@ const rightContent = [
 
 const ServicesDetails = () => {
   const container = useRef<HTMLDivElement>(null);
-  const t = useTranslations("ServicesDetailsSection");
+  const tDetails = useTranslations("ServicesDetailsSection");
+  const tServices = useTranslations("ServicesSection");
 
-  const services = t.raw("services") as {
+  const services = tDetails.raw("services") as {
     tag: string;
     title: string;
     desc: string;
@@ -81,6 +82,11 @@ const ServicesDetails = () => {
 
   return (
     <section ref={container} className="overflow-x-hidden">
+      <section className={"max-w-360 mx-auto w-full px-6 py-4  md:px-30"}>
+        <p className="split font-bold text-[clamp(24px,4vw,40px)] leading-10">
+          {tServices("title")}
+        </p>
+      </section>
       {services.map((service, i) => {
         const isEven = i % 2 === 0;
 

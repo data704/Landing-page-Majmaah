@@ -52,7 +52,7 @@ html[lang="ar"] body {
 }
 
 .marque-animation {
-  animation: marquee 20s linear infinite;
+  animation: marquee 60s linear infinite;
 }
 .split-line {
   display: block;

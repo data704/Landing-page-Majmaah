@@ -1,7 +1,7 @@
 {
   "TabTitle": {
-    "title": "URIMPACT | Landing Page",
-    "description": "Urimpact landing page"
+    "title": "URIMPACT",
+    "description": "Urimpact"
   },
   "Navbar": [
     { "label": "Contact Us", "id": "contact-us" },
@@ -36,7 +36,7 @@
     }
   },
   "TrustedSection": {
-    "title": "Our partners",
+    "title": "Our Partners",
     "stats": [
       { "label": "Projects Monitored", "value": "10,000+" },
       { "label": "Trees Verified", "value": "50+" },
