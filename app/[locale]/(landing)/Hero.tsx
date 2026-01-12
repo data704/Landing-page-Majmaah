@@ -8,6 +8,7 @@ import { gsap, useGSAP } from "@/app/lib/gsap";
 import { useScrambleText } from "@/app/hooks/useScrambleText";
 import { useSplitText } from "@/app/hooks/useSplitText";
 import { useTranslations } from "next-intl";
+import Marquee from "./components/Marquee";
 
 const Hero = () => {
   const container = React.useRef<HTMLDivElement>(null);
@@ -77,43 +78,45 @@ const Hero = () => {
             }}
           />
           <div className="w-full overflow-hidden ">
-            <div className="marque-animation flex items-center gap-6 whitespace-nowrap">
-              <FlexBetween className="gap-2 items-center">
-                <Image
-                  src="/icons/satellite.svg"
-                  alt="Satellite Icon"
-                  width={16}
-                  height={16}
-                />
-                <p className="text-[16px] font-normal leading-5 opacity-70 text-(--color-secondary)">
-                  {t("LeftContent.marque_label_1")}
-                </p>
-              </FlexBetween>
+            <Marquee speedPxPerSecond={140} gapPx={64} duration={20}>
+              <div className="flex items-center gap-6 whitespace-nowrap">
+                <FlexBetween className="gap-2 items-center">
+                  <Image
+                    src="/icons/satellite.svg"
+                    alt="Satellite Icon"
+                    width={16}
+                    height={16}
+                  />
+                  <p className="text-[16px] font-normal leading-5 opacity-70 text-(--color-secondary)">
+                    {t("LeftContent.marque_label_1")}
+                  </p>
+                </FlexBetween>
 
-              <FlexBetween className="gap-2 items-center">
-                <Image
-                  src="/icons/tree.svg"
-                  alt="Tree Icon"
-                  width={16}
-                  height={16}
-                />
-                <p className="text-[16px] font-normal leading-5 opacity-70 text-(--color-secondary)">
-                  {t("LeftContent.marque_label_2")}
-                </p>
-              </FlexBetween>
+                <FlexBetween className="gap-2 items-center">
+                  <Image
+                    src="/icons/tree.svg"
+                    alt="Tree Icon"
+                    width={16}
+                    height={16}
+                  />
+                  <p className="text-[16px] font-normal leading-5 opacity-70 text-(--color-secondary)">
+                    {t("LeftContent.marque_label_2")}
+                  </p>
+                </FlexBetween>
 
-              <FlexBetween className="gap-2 items-center">
-                <Image
-                  src="/icons/audit.svg"
-                  alt="Audit Icon"
-                  width={16}
-                  height={16}
-                />
-                <p className="text-[16px] font-normal leading-5 opacity-70 text-(--color-secondary)">
-                  {t("LeftContent.marque_label_3")}
-                </p>
-              </FlexBetween>
-            </div>
+                <FlexBetween className="gap-2 items-center">
+                  <Image
+                    src="/icons/audit.svg"
+                    alt="Audit Icon"
+                    width={16}
+                    height={16}
+                  />
+                  <p className="text-[16px] font-normal leading-5 opacity-70 text-(--color-secondary)">
+                    {t("LeftContent.marque_label_3")}
+                  </p>
+                </FlexBetween>
+              </div>
+            </Marquee>
           </div>
         </div>
         <div className="right-element w-full md:w-5/12 flex items-center justify-center md:justify-end">

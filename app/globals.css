@@ -7,6 +7,7 @@
   --secondary: #2c3e50;
   --font-inter: "Inter", sans-serif;
   --font-ffShamel: "FF Shamel One Book", sans-serif;
+  --marque-duration: 25s;
 }
 
 @theme inline {
@@ -39,25 +40,68 @@ html[lang="ar"] body {
   font-family: var(--font-ffShamel), "Cairo", sans-serif;
 }
 
-/* MARQUE ANIMATION EFFECT  */
+/* Marquee Css  */
 @keyframes marquee {
-  0% {
-    transform: translateX(100%);
+  from {
+    transform: translate3d(0, 0, 0);
   }
-  100% {
-    transform: translateX(-100%);
+  to {
+    transform: translate3d(calc(-1 * var(--marquee-distance)), 0, 0);
   }
 }
 
-.marque-animation {
-  animation: marquee 30s linear infinite;
+.marquee-track {
+  animation-name: marquee;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: var(--marquee-duration, 30s);
+  will-change: transform;
 }
 
-@media (max-width: 640px) {
-  .marque-animation {
-    animation-duration: 10s;
+/* pause on hover */
+.marquee-hover:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+    transform: none;
   }
 }
+
+/* @keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee 25s linear infinite;
+}
+
+.marquee__track > * {
+  flex: 0 0 auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track {
+    animation: none;
+    transform: none;
+  }
+} */
+
 .split-line {
   display: block;
   line-height: inherit;

@@ -6,6 +6,7 @@ import React from "react";
 import { useScrambleText } from "@/app/hooks/useScrambleText";
 import { useSplitText } from "@/app/hooks/useSplitText";
 import { useTranslations } from "next-intl";
+import Marquee from "./components/Marquee";
 
 const Trusted = () => {
   const container = React.useRef<HTMLDivElement>(null);
@@ -37,33 +38,22 @@ const Trusted = () => {
         </p>
 
         <div className="w-full overflow-hidden">
-          <div className="marque-animation flex gap-16 w-full">
+          <Marquee speedPxPerSecond={140} gapPx={64} duration={30}>
             {partnersLogo.map((src, i) => (
               <div
                 key={i}
-                style={{
-                  height: 160,
-                  minWidth: 160,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+                className="flex h-40 min-w-40 items-center justify-center"
               >
                 <Image
                   src={src}
                   alt="partner logo"
                   width={400}
                   height={160}
-                  style={{
-                    height: "160px",
-                    width: "auto",
-                    objectFit: "contain",
-                    maxWidth: "100%",
-                  }}
+                  className="h-40 w-auto max-w-full object-contain"
                 />
               </div>
             ))}
-          </div>
+          </Marquee>
         </div>
       </div>
     </Container>
