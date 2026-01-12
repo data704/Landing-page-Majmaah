@@ -63,6 +63,9 @@ const CTA = () => {
               variant="contained"
               text={t("primary_button")}
               className="whitespace-nowrap"
+              onClick={() => {
+                window.open("https://dashboard.urimpact.sa/login", "_blank");
+              }}
             />
             <Button
               variant="outlined"

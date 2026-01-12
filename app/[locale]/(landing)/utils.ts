@@ -5,22 +5,23 @@ import {
   ServicesDetailsProps,
 } from "./types";
 
+export const navbar = [
+  { id: 1, title: "About Us", href: "about-us" },
+  { id: 2, title: "Contact", href: "contact-us" },
+  { id: 3, title: "Services", href: "services" },
+  { id: 4, title: "Problems & Solutions", href: "problem-and-solution" },
+  { id: 5, title: "See Forest", href: "see-forest" },
+];
 
-
-export const navbar=[
-  {id:1, title:"About Us", href:"about-us"},
-  {id:2, title:"Contact", href:"contact-us"},
-  {id:3, title:"Services", href:"services"},
-  {id:4, title:"Problems & Solutions", href:"problem-and-solution"},
-  {id:5, title:"See Forest", href:"see-forest"},
-]
-
-export const images = [
-  "/images/image 1.png",
-  "/images/image 2.png",
-  "/images/image 3.png",
-  "/images/image 4.png",
-  "/images/image 5.png",
+export const partnersLogo = [
+  "/images/partners/KACST.svg",
+  "/images/partners/King Abdulaziz University.svg",
+  "/images/partners/king-khalid-university.svg",
+  "/images/partners/Majmaah University.svg",
+  "/images/partners/mewa-logo.svg",
+  "/images/partners/NCVC-Logo-Color-AR.svg",
+  "/images/partners/prince-sattam-bin-abdullaziz-university.svg",
+  "/images/partners/Saudi_Ministry_of_National_Guard_Logo.svg",
 ];
 
 export const services: Service[] = [
@@ -190,3 +191,9 @@ export const servicesDetails: ServicesDetailsProps[] = [
     bg: "#E8D5B7",
   },
 ];
+
+export function getIsDesktop() {
+  if (typeof navigator === "undefined") return false;
+  const ua = navigator.userAgent || "";
+  return !/Android|iPhone|iPad/i.test(ua);
+}

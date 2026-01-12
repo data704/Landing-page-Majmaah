@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Container from "./components/Container";
 import FlexBetween from "./components/FlexBetween";
-import { images } from "./utils";
+import { partnersLogo } from "./utils";
 import React from "react";
 import { useScrambleText } from "@/app/hooks/useScrambleText";
 import { useSplitText } from "@/app/hooks/useSplitText";
@@ -25,7 +25,7 @@ const Trusted = () => {
   // const messages = useMessages()
   // const keys = Object.keys(messages.TrustedSection.stats)
   // console.log('keys', keys)
-  const stats = t.raw("stats") as { label: string; value: string }[];
+  // const stats = t.raw("stats") as { label: string; value: string }[];
   // console.log('stats', stats)
   return (
     <Container>
@@ -39,8 +39,8 @@ const Trusted = () => {
 
         <div className="w-full overflow-hidden">
           <div className="marque-animation flex gap-16 w-full">
-            {[...images, ...images].map((src, i) => (
-              <Image key={i} src={src} alt="logo" width={400} height={200} />
+            {partnersLogo.map((src, i) => (
+              <Image key={i} src={src} alt="logo" width={160} height={200} />
             ))}
           </div>
         </div>

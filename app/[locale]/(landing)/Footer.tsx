@@ -14,13 +14,20 @@ const socialIcons = [
     id: 2,
     icon: "/icons/phone.svg",
     label: "whatsapp",
-    href: "https://api.whatsapp.com/send?phone=966505527927",
+    href: "https://api.whatsapp.com/send?phone=966545636919",
   },
-  //   { id: 2, icon: "/icons/facebook.svg", label: "Facebook" },
-  //   { id: 3, icon: "/icons/twitter.svg", label: "X" },
+  {
+    id: 3,
+    icon: "/icons/email.svg",
+    label: "Email",
+    href: getIsDesktop()
+      ? "https://mail.google.com/mail/?view=cm&fs=1&to=info@urimpact.sa"
+      : "mailto:info@urimpact.sa",
+  },
 ];
 import { useTranslations } from "next-intl";
 import Modal from "./components/Modal";
+import { getIsDesktop } from "./utils";
 
 type StateModalProps = "privacy" | "terms" | "cookie" | "security";
 
@@ -169,22 +176,25 @@ const Footer = () => {
               {t("copyright")}
             </p>
             <div className="flex items-center gap-2">
-              {socialIcons.map((social) => (
-                <a
-                  href={social.href}
-                  key={social.id}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Image
-                    src={social.icon}
-                    alt={social.label}
-                    width={18}
-                    height={18}
-                    className="cursor-pointer"
-                  />
-                </a>
-              ))}
+              {socialIcons.map((social) => {
+                const isMail = social.href.startsWith("mailto:");
+                return (
+                  <a
+                    href={social.href}
+                    key={social.id}
+                    target={isMail ? undefined : "_blank"}
+                    rel={isMail ? undefined : "noopener noreferrer"}
+                  >
+                    <Image
+                      src={social.icon}
+                      alt={social.label}
+                      width={18}
+                      height={18}
+                      className="cursor-pointer"
+                    />
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>

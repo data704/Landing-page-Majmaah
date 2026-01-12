@@ -1,7 +1,7 @@
 "use client";
 import ProblemAndSoution from "./ProblemAndSoution";
 import Hero from "./Hero";
-import Services from "./Services";
+// import Services from "./Services";
 import ServicesDetails from "./ServicesDetails";
 import Trusted from "./Trusted";
 import SeeForest from "./SeeForest";
@@ -23,7 +23,7 @@ const Landing = () => {
       <SeeForest />
       <Trusted />
       <TabSection />
-      <Services />
+      {/* <Services /> */}
       <ServicesDetails />
       <ProblemAndSoution />
       <CTA />
