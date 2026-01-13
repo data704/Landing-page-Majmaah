@@ -81,7 +81,7 @@ const ServicesDetails = () => {
   );
 
   return (
-    <section ref={container} className="overflow-x-hidden">
+    <section ref={container} className="overflow-x-hidden" id="services">
       <section className={"max-w-360 mx-auto w-full px-6 py-4  md:px-30"}>
         <p className="split font-bold text-[clamp(24px,4vw,40px)] leading-10">
           {tServices("title")}
