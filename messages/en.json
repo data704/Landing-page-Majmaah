@@ -11,10 +11,12 @@
   "HeroSection": {
     "LeftContent": {
       "chip_label": "Satellite Forest Monitoring",
-      "title": "Monitor Tree Planting Projects ",
+      "title": "Begin Monitoring your impact",
       "span_title": "From Space",
-      "sub_title": "Automated satellite monitoring for transparent, verifiable tree planting impact. Real-time data, instant reports, and stakeholder confidence.",
-      "btn_text": "Start Monitoring",
+      "sub_title": "From satellite-verified tree monitoring to structured emissions tracking, one platform for credible climate impact.",
+      "btn_start_monitoring": "Start Monitoring",
+      "btn_monitor_your_trees": "Monitor your Trees",
+      "btn_monitor_your_emissions": "Monitor your Emissions",
       "marque_label_1": "Daily satellite updates",
       "marque_label_2": "Multispectral and hyperspectral analysis",
       "marque_label_3": "Species based carbon sequestration models"

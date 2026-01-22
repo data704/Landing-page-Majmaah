@@ -49,7 +49,7 @@ const tabs = [
 
 const TabSection = () => {
   const [activeTab, setActiveTab] = useState<number>(1);
-  const [activeSubTab, setActiveSubTab] = useState<number>(0);
+  const [activeSubTab, _setActiveSubTab] = useState<number>(0);
   const contentRef = useRef<HTMLDivElement>(null);
   const containerSection = useRef<HTMLDivElement>(null);
 
@@ -113,7 +113,7 @@ const TabSection = () => {
             </button>
           ))}
         </div>
-        {activeTab === 2 && activeTabObj?.sub_tab && (
+        {/* {activeTab === 2 && activeTabObj?.sub_tab && (
           <div className="flex items-center gap-2 w-full">
             {activeTabObj.sub_tab.map((sub, index) => (
               <button
@@ -127,7 +127,7 @@ const TabSection = () => {
               </button>
             ))}
           </div>
-        )}
+        )} */}
         <div
           ref={contentRef}
           className="w-full h-60 md:h-150 overflow-auto overflow-x-hidden py-2 flex justify-center items-start border border-gray-200 rounded-md"

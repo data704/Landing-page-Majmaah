@@ -44,10 +44,10 @@ const Hero = () => {
           scale: 1,
           opacity: 1,
           duration: 2,
-        }
+        },
       );
     },
-    { scope: container }
+    { scope: container },
   );
   return (
     <section
@@ -62,21 +62,40 @@ const Hero = () => {
           </span>
           <p className="hero-title text-[clamp(28px,4vw,48px)] font-bold leading-8 md:leading-12 -tracking-[1.2px] text-(-color-secondary)">
             {t("LeftContent.title")}{" "}
-            <span className="text-(--color-primary)">
+            {/* <span className="text-(--color-primary)">
               {t("LeftContent.span_title")}
-            </span>
+            </span> */}
           </p>
           <p className="hero-title text-[clamp(14px,4vw,24px)] font-normal leading-5 md:leading-7 text-(--color-secondary) opacity-90">
             {t("LeftContent.sub_title")}
           </p>
-          <Button
-            text={t("LeftContent.btn_text")}
-            variant="contained"
-            icon={ArrowIcon}
-            onClick={() => {
-              window.open("https://dashboard.urimpact.sa/login", "_blank");
-            }}
-          />
+          <div className="flex gap-2 flex-wrap">
+            {/* <Button
+              text={t("LeftContent.btn_start_monitoring")}
+              variant="contained"
+              icon={ArrowIcon}
+              onClick={() => {
+                window.open("https://dashboard.urimpact.sa/login", "_blank");
+              }}
+            /> */}
+            <Button
+              text={t("LeftContent.btn_monitor_your_trees")}
+              variant="contained"
+              icon={ArrowIcon}
+              // onClick={() => {
+              //   window.open("https://dashboard.urimpact.sa/login", "_blank");
+              // }}
+            />
+            <Button
+              text={t("LeftContent.btn_monitor_your_emissions")}
+              variant="contained"
+              icon={ArrowIcon}
+              // onClick={() => {
+              //   window.open("https://dashboard.urimpact.sa/login", "_blank");
+              // }}
+            />
+          </div>
+
           <div className="w-full overflow-hidden ">
             <Marquee speedPxPerSecond={140} gapPx={64} duration={20}>
               <div className="flex items-center gap-6 whitespace-nowrap">
