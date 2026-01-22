@@ -82,17 +82,17 @@ const Hero = () => {
               text={t("LeftContent.btn_monitor_your_trees")}
               variant="contained"
               icon={ArrowIcon}
-              // onClick={() => {
-              //   window.open("https://dashboard.urimpact.sa/login", "_blank");
-              // }}
+              onClick={() => {
+                window.open("https://dashboard.urimpact.sa/login", "_blank");
+              }}
             />
             <Button
               text={t("LeftContent.btn_monitor_your_emissions")}
               variant="contained"
               icon={ArrowIcon}
-              // onClick={() => {
-              //   window.open("https://dashboard.urimpact.sa/login", "_blank");
-              // }}
+              onClick={() => {
+                window.open("https://dashboard.urimpact.sa/login", "_blank");
+              }}
             />
           </div>
 
