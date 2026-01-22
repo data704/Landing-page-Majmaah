@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
+import { ButtonHTMLAttributes, useRef } from "react";
 import { gsap, useGSAP } from "@/app/lib/gsap";
 import { useParams } from "next/navigation";
 type ButtonProps = {
@@ -10,7 +10,7 @@ type ButtonProps = {
   text: string;
   icon?: string;
   className?: string;
-};
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button = ({
   variant = "contained",
@@ -18,6 +18,7 @@ const Button = ({
   text,
   icon,
   className,
+  ...props
 }: ButtonProps) => {
   const btnRef = useRef<HTMLButtonElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
@@ -40,7 +41,7 @@ const Button = ({
           duration: 0.4,
           ease: "power2.out",
         },
-        0
+        0,
       );
       const handleEnter = () => tl.play();
       const handleLeave = () => tl.reverse();
@@ -53,7 +54,7 @@ const Button = ({
         btn.removeEventListener("mouseleave", handleLeave);
       };
     },
-    { scope: btnRef }
+    { scope: btnRef },
   );
 
   return (
@@ -76,6 +77,7 @@ const Button = ({
             }
           : undefined
       }
+      {...props}
     >
       <span>{text}</span>
       {variant === "contained" && icon && (

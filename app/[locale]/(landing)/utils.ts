@@ -39,7 +39,7 @@ export const services: Service[] = [
     bg: "#2D5F3F",
   },
   {
-    title: "ESG Carbon Management",
+    title: "ESG Management Platform",
     description:
       "Complete carbon management platform combining Scope 1 & 2 emissions tracking with satellite-verified tree planting offsets.",
     features: [
@@ -142,7 +142,7 @@ export const servicesDetails: ServicesDetailsProps[] = [
   },
   {
     id: 2,
-    tag: "ESG Carbon Management",
+    tag: "ESG Management Platform",
     title: "Complete Carbon Management Platform",
     desc: "Combine Scope 1 & 2 emissions tracking with satellite-verified tree planting offsets.",
     sub_desc:

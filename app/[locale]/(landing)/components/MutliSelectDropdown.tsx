@@ -7,29 +7,42 @@ interface Option {
 }
 
 interface MultiSelectDropdownProps {
+  value?: Option[];
+  onChange?: (selected: Option[]) => void;
   placeholder?: string;
   options: Option[];
+  error?: boolean;
 }
 
-export default function MultiSelectDropdown({ placeholder, options }: MultiSelectDropdownProps) {
-  const [selected, setSelected] = useState<Option[]>([]);
+export default function MultiSelectDropdown({
+  placeholder,
+  options,
+  value,
+  onChange,
+  error,
+}: MultiSelectDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
 
   const addOption = (option: Option) => {
-    setSelected([...selected, option]);
+    if (!Array.isArray(value)) return;
+    onChange?.([...value, option]);
     setIsOpen(false);
   };
 
-  const removeOption = (value: string) => {
-    setSelected(selected.filter((opt) => opt.value !== value));
+  const removeOption = (val: string) => {
+    if (!Array.isArray(value)) return;
+    onChange?.(value.filter((opt) => opt.value !== val));
   };
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(e.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
@@ -40,22 +53,31 @@ export default function MultiSelectDropdown({ placeholder, options }: MultiSelec
   return (
     <div className="relative w-full" ref={containerRef}>
       <div
-        className="flex flex-wrap items-center gap-2 border border-black/20 rounded-lg bg-primary/10 px-3 py-2 cursor-pointer"
+        className={`flex flex-wrap items-center gap-2 border rounded-lg bg-primary/10 px-3 py-2 cursor-pointer ${
+          error ? "border-red-400" : "border-black/20"
+        }`}
         onClick={toggleDropdown}
       >
-        {selected.map((item) => (
-          <span key={item.value} className="flex items-center bg-primary/20 px-2 py-1 rounded-lg text-sm">
-            {item.label}
-            <button
-              onClick={(e) => { e.stopPropagation(); removeOption(item.value); }}
-              className="ml-1 text-red-500 hover:text-red-700 cursor-pointer"
+        {Array.isArray(value) &&
+          value.map((item) => (
+            <span
+              key={item.value}
+              className="flex items-center bg-primary/20 px-2 py-1 rounded-lg text-sm"
             >
-              ×
-            </button>
-          </span>
-        ))}
+              {item.label}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  removeOption(item.value);
+                }}
+                className="ml-1 text-red-500 hover:text-red-700 cursor-pointer"
+              >
+                ×
+              </button>
+            </span>
+          ))}
 
-        {selected.length === 0 && (
+        {Array.isArray(value) && value.length === 0 && (
           <span className="text-secondary/50">{placeholder}</span>
         )}
       </div>
@@ -63,7 +85,7 @@ export default function MultiSelectDropdown({ placeholder, options }: MultiSelec
       {isOpen && (
         <div className="absolute z-20 bg-white shadow-xl mt-1 rounded-lg w-full max-h-52 overflow-y-auto">
           {options
-            .filter((opt) => !selected.some((s) => s.value === opt.value))
+            .filter((opt) => !value?.some((s) => s.value === opt.value))
             .map((opt) => (
               <div
                 key={opt.value}
