@@ -9,10 +9,13 @@ import { useScrambleText } from "@/app/hooks/useScrambleText";
 import { useSplitText } from "@/app/hooks/useSplitText";
 import { useTranslations } from "next-intl";
 import Marquee from "./components/Marquee";
+import useIsMobile from "@/hooks/useIsMobile";
 
 const Hero = () => {
   const container = React.useRef<HTMLDivElement>(null);
   const t = useTranslations("HeroSection");
+  const isMobile = useIsMobile();
+
   useScrambleText({
     selector: ".stat-value",
     scope: container,
@@ -69,7 +72,7 @@ const Hero = () => {
           <p className="hero-title text-[clamp(14px,4vw,24px)] font-normal leading-5 md:leading-7 text-(--color-secondary) opacity-90">
             {t("LeftContent.sub_title")}
           </p>
-          <div className="flex gap-2 flex-wrap">
+          <div className="flex gap-1 flex-wrap">
             {/* <Button
               text={t("LeftContent.btn_start_monitoring")}
               variant="contained"
@@ -85,6 +88,9 @@ const Hero = () => {
               onClick={() => {
                 window.open("https://dashboard.urimpact.sa/login", "_blank");
               }}
+              {...(isMobile && {
+                style: { fontSize: "12px" },
+              })}
             />
             <Button
               text={t("LeftContent.btn_monitor_your_emissions")}
@@ -93,6 +99,9 @@ const Hero = () => {
               onClick={() => {
                 window.open("https://dashboard.urimpact.sa/login", "_blank");
               }}
+              {...(isMobile && {
+                style: { fontSize: "12px" },
+              })}
             />
           </div>
 
