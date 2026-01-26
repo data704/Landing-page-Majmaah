@@ -96,9 +96,8 @@ const TabSection = () => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`split flex items-center gap-1 px-1 py-2 rounded-md transition-colors duration-300 w-30 md:w-auto  cursor-pointer   ${
-                activeTab === tab.id ? "text-primary" : ""
-              }`}
+              className={`split flex items-center gap-1 px-1 py-2 rounded-md transition-colors duration-300 w-34 md:w-auto  cursor-pointer   ${activeTab === tab.id ? "text-primary" : ""
+                }`}
             >
               <Image
                 src={tab.icon}
