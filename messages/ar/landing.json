@@ -1,0 +1,29 @@
+{
+  "hero": {
+    "left-content": {
+      "chip_label": "التحيز: يحد من نطاق علم الغابات",
+      "title": "ابدأ مراقبة تأثيرك",
+      "sub_title": "من مراقبة الأشجار الموثقة عبر الأقمار الصناعية إلى تتبع الانبعاثات المنظم، منصة واحدة لتأثير مناخي موثوق.",
+      "btn_start_monitoring": "ابدأ المراقبة",
+      "btn_monitor_your_trees": "راقب أشجارك",
+      "marque_label_1": "تحديثات يومية عبر الأقمار الصناعية",
+      "marque_label_2": "تحليل متعدد الأطياف وفائق الأطياف",
+      "marque_label_3": "نماذج احتجاز الكربون بناءً على الأنواع"
+    },
+    "right-content": {
+      "card_title": "المشروع: إعادة تشجير الأمازون",
+      "card_chip_label": "نشط",
+      "stats1_title": "2,450",
+      "stats1_sub_title": "شجرة مزروعة",
+      "stats1_count_per": "+12%",
+      "stats2_title": "94%",
+      "stats2_sub_title": "معدل البقاء",
+      "stats2_count_per": "+3%",
+      "stats3_title": "12.3 طن",
+      "stats3_sub_title": "انبعاثات CO₂ محتجزة",
+      "stats3_count_per": "+8%",
+      "overlay_title": "اكتشاف جديد",
+      "overlay_sub_title": "+156 شجرة تم التحقق منها"
+    }
+  }
+}

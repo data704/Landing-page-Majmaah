@@ -1,13 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import ContactModal from "./components/ContactModal";
-import { navbar_items } from "./utils";
-import { Link } from "@/i18n/navigation";
-import Button from "./components/Button";
+import ContactFormModal from "@/components/ContactFormModal";
+import Button from "@/components/Button";
+import { navbarItems } from "./config";
+import Link from "next/link";
 
-const Navbar = () => {
-  const t = useTranslations('navbar');
+const Header = () => {
+  const t = useTranslations("navbar");
   const locale = useLocale();
 
   const [openMenu, setOpenMenu] = useState<boolean>(false);
@@ -49,12 +51,12 @@ const Navbar = () => {
             <div className="flex items-center justify-center gap-4 md:gap-8">
               <div className="hidden lg:flex items-center justify-center">
                 <div className="flex items-center gap-4">
-                  {navbar_items.map((item) => (
+                  {navbarItems.map((item) => (
                     <div key={item.id} className="relative group">
                       {item.children ? (
                         <button
                           type="button"
-                          onClick={(e) => {
+                          onClick={() => {
                             // mobile toggle logic if needed
                           }}
                           className="text-md tracking-tight flex items-center gap-1 hover:bg-primary/20 py-2 px-3 rounded-lg"
@@ -68,7 +70,6 @@ const Navbar = () => {
                             className="rotate-180"
                           />
                         </button>
-
                       ) : item.modalOpen ? (
                         <button
                           type="button"
@@ -77,7 +78,6 @@ const Navbar = () => {
                         >
                           {t(item.label)}
                         </button>
-
                       ) : (
                         <Link
                           href={item.href}
@@ -101,10 +101,13 @@ const Navbar = () => {
                           ))}
                         </div>
                       )}
-
                     </div>
                   ))}
-                  <Button className="md:px-2 py-1.5" variant="contained" text={t('btn-platform-demo-label')} />
+                  <Button
+                    className="md:px-2 py-1.5"
+                    variant="contained"
+                    text={t("btn-platform-demo-label")}
+                  />
                 </div>
               </div>
               <button
@@ -121,17 +124,19 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+
+        {/* Mobile Menu  */}
         {openMenu && (
-          <div className="absolute top-20 bg-white shadow-xl/20 w-full rounded-xl">
+          <div className="absolute top-0 bg-white shadow-xl/20 w-full rounded-xl">
             <div className="flex flex-col items-start gap-4 p-4">
-              {navbar_items.map((item) => (
+              {navbarItems.map((item) => (
                 <div key={item.id} className="w-full">
                   {item.children ? (
                     <button
                       type="button"
                       onClick={() =>
                         setActiveDropdown(
-                          activeDropdown === item.id ? null : item.id
+                          activeDropdown === item.id ? null : item.id,
                         )
                       }
                       className="text-md w-full tracking-tight flex items-center justify-between gap-1 hover:bg-primary/20 py-2 px-3 rounded-lg"
@@ -145,7 +150,6 @@ const Navbar = () => {
                         className="rotate-180"
                       />
                     </button>
-
                   ) : item.modalOpen ? (
                     <button
                       type="button"
@@ -157,7 +161,6 @@ const Navbar = () => {
                     >
                       {t(item.label)}
                     </button>
-
                   ) : (
                     <Link
                       href={item.href}
@@ -186,12 +189,16 @@ const Navbar = () => {
                     )}
                 </div>
               ))}
-              <Button className="md:px-2 py-1.5 w-full" variant="contained" text={t('btn-platform-demo-label')} />
+              <Button
+                className="md:px-2 py-1.5 w-full"
+                variant="contained"
+                text={t("btn-platform-demo-label")}
+              />
             </div>
           </div>
         )}
       </div>
-      <ContactModal
+      <ContactFormModal
         open={openContactModal}
         onClose={() => setOpenContactModal(false)}
       />
@@ -199,4 +206,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;
