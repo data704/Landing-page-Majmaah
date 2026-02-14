@@ -3,11 +3,6 @@
     "title": "URIMPACT | الصفحة الرئيسية",
     "description": "الصفحة الرئيسية لـ Urimpact"
   },
-  "Navbar": [
-    { "label": "تواصل معنا", "id": "contact-us" },
-    { "label": "الخدمات", "id": "services" },
-    { "label": "رؤية الغابات", "id": "see-forest" }
-  ],
   "HeroSection": {
     "LeftContent": {
       "chip_label": "مراقبة الغابات عبر الأقمار الصناعية",

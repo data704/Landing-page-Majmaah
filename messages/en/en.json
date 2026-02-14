@@ -3,11 +3,6 @@
     "title": "URIMPACT",
     "description": "Urimpact"
   },
-  "Navbar": [
-    { "label": "Contact Us", "id": "contact-us" },
-    { "label": "Services", "id": "services" },
-    { "label": "See Forest", "id": "see-forest" }
-  ],
   "HeroSection": {
     "LeftContent": {
       "chip_label": "Satellite Forest Monitoring",

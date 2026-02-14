@@ -1,23 +1,19 @@
 import Image from "next/image";
-import LocaleSwitcher from "./components/localSwticher";
-import { useParams } from "next/navigation";
-import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import ContactModal from "./components/ContactModal";
+import { navbar_items } from "./utils";
+import { Link } from "@/i18n/navigation";
+import Button from "./components/Button";
 
-export type Locale = "en" | "ar";
 const Navbar = () => {
-  const t = useTranslations();
-  const navbar = t.raw("Navbar") as { label: string; id: string }[];
+  const t = useTranslations('navbar');
+  const locale = useLocale();
 
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   const [openContactModal, setOpenContactModal] = useState<boolean>(false);
-  // console.log('openContactModal', openContactModal)
-  const params = useParams();
-  const supportedLocales: Locale[] = ["en", "ar"];
-  const locale: Locale = supportedLocales.includes(params.locale as Locale)
-    ? (params.locale as Locale)
-    : "en";
+  const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -25,39 +21,92 @@ const Navbar = () => {
       window.scrollTo({ behavior: "smooth", top: topPos });
     }
   };
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setOpenMenu(false);
+        setActiveDropdown(null);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
       <div className="w-full h-18 flex items-center justify-center backdrop-blur-lg fixed top-0 left-0 bg-white shadow-xs border-b border-white/20 z-99">
-        <div className="max-w-7xl mx-auto w-full px-4 md:px-0">
+        <div className="max-w-7xl mx-auto w-full px-4 md:px-4">
           <div className="flex items-center justify-between">
             <Image
               src="/URIMPACT_LOGO.png"
               alt="logo-image"
               width={200}
               height={40}
-              className="object-contain cursor-pointer w-35 md:w-50 md:h-16 "
+              className={`object-contain cursor-pointer w-35 md:w-50 md:h-16`}
               onClick={() => scrollToSection("hero-section")}
             />
             <div className="flex items-center justify-center gap-4 md:gap-8">
               <div className="hidden lg:flex items-center justify-center">
                 <div className="flex items-center gap-4">
-                  {navbar.map((item) => (
-                    <button
-                      key={item.id}
-                      onClick={() =>
-                        item.label === "Contact Us" ||
-                        item.label === "تواصل معنا"
-                          ? setOpenContactModal(true)
-                          : scrollToSection(item.id)
-                      }
-                      className="text-md tracking-tight hover:text-background cursor-pointer"
-                    >
-                      {item.label}
-                    </button>
+                  {navbar_items.map((item) => (
+                    <div key={item.id} className="relative group">
+                      {item.children ? (
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            // mobile toggle logic if needed
+                          }}
+                          className="text-md tracking-tight flex items-center gap-1 hover:bg-primary/20 py-2 px-3 rounded-lg"
+                        >
+                          <p>{t(item.label)}</p>
+                          <Image
+                            src="/icons/arrowhead.svg"
+                            alt="arrow-icon"
+                            width={20}
+                            height={20}
+                            className="rotate-180"
+                          />
+                        </button>
+
+                      ) : item.modalOpen ? (
+                        <button
+                          type="button"
+                          onClick={() => setOpenContactModal(true)}
+                          className="text-md tracking-tight flex items-center gap-1 hover:bg-primary/20 py-2 px-3 rounded-lg"
+                        >
+                          {t(item.label)}
+                        </button>
+
+                      ) : (
+                        <Link
+                          href={item.href}
+                          locale={locale}
+                          className="text-md tracking-tight flex items-center gap-1 hover:bg-primary/20 py-2 px-3 rounded-lg"
+                        >
+                          {t(item.label)}
+                        </Link>
+                      )}
+                      {item.children && (
+                        <div className="absolute left-0 mt-1 hidden group-hover:flex group-hover:flex-col bg-white shadow-lg rounded-md p-2 min-w-65 z-50">
+                          {item.children.map((child, index) => (
+                            <Link
+                              key={child.id}
+                              href={child.href}
+                              locale={locale}
+                              className="py-2 px-3 hover:bg-primary/10 rounded"
+                            >
+                              {index + 1}. {t(child.label)}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+
+                    </div>
                   ))}
+                  <Button className="md:px-2 py-1.5" variant="contained" text={t('btn-platform-demo-label')} />
                 </div>
               </div>
-              <LocaleSwitcher currentLocale={locale} />
               <button
                 className="block lg:hidden cursor-pointer"
                 onClick={() => setOpenMenu(!openMenu)}
@@ -71,38 +120,73 @@ const Navbar = () => {
               </button>
             </div>
           </div>
-          <div
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(21, 194, 179, 0) 0%, rgba(36, 194, 181, 1) 50%, rgba(36, 194, 181, 1) 100%)",
-            }}
-            className={`absolute  ${
-              params.locale === "ar" ? "left-0 scale-x-[-1]" : "right-0"
-            } top-0 -z-40 h-full md:w-210 w-50`}
-          ></div>
         </div>
         {openMenu && (
-          <div className="absolute top-20 bg-primary w-full rounded-xl">
+          <div className="absolute top-20 bg-white shadow-xl/20 w-full rounded-xl">
             <div className="flex flex-col items-start gap-4 p-4">
-              {navbar.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => {
-                    if (
-                      item.label === "Contact Us" ||
-                      item.label === "تواصل معنا"
-                    ) {
-                      setOpenContactModal(true);
-                    } else {
-                      scrollToSection(item.id);
-                      setOpenMenu(false);
-                    }
-                  }}
-                  className="text-white text-md hover:text-secondary cursor-pointer"
-                >
-                  {item.label}
-                </button>
+              {navbar_items.map((item) => (
+                <div key={item.id} className="w-full">
+                  {item.children ? (
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setActiveDropdown(
+                          activeDropdown === item.id ? null : item.id
+                        )
+                      }
+                      className="text-md w-full tracking-tight flex items-center justify-between gap-1 hover:bg-primary/20 py-2 px-3 rounded-lg"
+                    >
+                      <p>{t(item.label)}</p>
+                      <Image
+                        src="/icons/arrowhead.svg"
+                        alt="arrow-icon"
+                        width={20}
+                        height={20}
+                        className="rotate-180"
+                      />
+                    </button>
+
+                  ) : item.modalOpen ? (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setOpenContactModal(true);
+                        // setOpenMenu(false);
+                      }}
+                      className="text-md w-full tracking-tight flex items-center gap-1 hover:bg-primary/20 py-2 px-3 rounded-lg"
+                    >
+                      {t(item.label)}
+                    </button>
+
+                  ) : (
+                    <Link
+                      href={item.href}
+                      locale={locale}
+                      className="text-md tracking-tight flex items-center gap-1 hover:bg-primary/20 py-2 px-3 rounded-lg"
+                    >
+                      {t(item.label)}
+                    </Link>
+                  )}
+                  {item.children &&
+                    item.children.length > 0 &&
+                    activeDropdown === item.id && (
+                      <div className="flex flex-col bg-gray-50 rounded-lg mt-1 p-2">
+                        {item.children.map((child, index) => (
+                          <Link
+                            key={child.id}
+                            href={child.href}
+                            locale={locale}
+                            className="py-2 px-3 hover:bg-primary/10 rounded"
+                            onClick={() => setActiveDropdown(null)}
+                          >
+                            {index + 1}. {t(child.label)}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                </div>
               ))}
+              <Button className="md:px-2 py-1.5 w-full" variant="contained" text={t('btn-platform-demo-label')} />
             </div>
           </div>
         )}

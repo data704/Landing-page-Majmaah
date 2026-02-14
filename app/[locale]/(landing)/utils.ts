@@ -1,17 +1,23 @@
 import {
   BenefitItem,
+  NavbarProps,
   ProblemAndSolutionFeatureItem,
   Service,
   ServicesDetailsProps,
 } from "./types";
 
-export const navbar = [
-  { id: 1, title: "About Us", href: "about-us" },
-  { id: 2, title: "Contact", href: "contact-us" },
-  { id: 3, title: "Services", href: "services" },
-  { id: 4, title: "Problems & Solutions", href: "problem-and-solution" },
-  { id: 5, title: "See Forest", href: "see-forest" },
-];
+//update navbar items with translation keys
+export const navbar_items: NavbarProps[] = [
+  { id: 1, label: "contact-label", href: "/", modalOpen: true },
+  {
+    id: 2, label: "solutions-label", href: "/",
+    children: [
+      { id: 2.1, label: "solutions-emission-management-label", href: "/" },
+      { id: 2.2, label: "solutions-nature-based-solutions-label", href: "/" }
+    ]
+  },
+  { id: 3, label: "see-forest-label", href: "/" },
+]
 
 export const partnersLogo = [
   "/images/partners/KACST.svg",
