@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import React, { useState } from "react";
 import { useGSAP, gsap, SplitText } from "@/app/lib/gsap";
@@ -26,8 +27,8 @@ const socialIcons = [
   },
 ];
 import { useTranslations } from "next-intl";
-import Modal from "./components/Modal";
-import { getIsDesktop } from "./utils";
+import { getIsDesktop } from "./config";
+import Modal from "@/components/Modal";
 
 type StateModalProps = "privacy" | "terms" | "cookie" | "security";
 
@@ -35,8 +36,9 @@ const Footer = () => {
   const container = React.useRef<HTMLElement>(null);
   const [openModal, setOpenModal] = useState<StateModalProps | null>(null);
 
-  const t = useTranslations("Footer");
-  const footerListContent = useTranslations("FooterModalData");
+  const t = useTranslations("footer");
+  const footerListContent = useTranslations("footer");
+
   const ModalData = {
     privacy: {
       title: footerListContent("privacy.title"),
@@ -62,7 +64,6 @@ const Footer = () => {
         scrollTrigger: {
           trigger: container.current,
           start: "top 75%",
-          // onEnter: () => tl.restart()
         },
       });
       tl.from(split.lines, {
@@ -73,7 +74,7 @@ const Footer = () => {
         ease: "power2.out",
       });
     },
-    { scope: container }
+    { scope: container },
   );
   return (
     <>
@@ -134,7 +135,7 @@ const Footer = () => {
                     setOpenModal("privacy");
                   }}
                 >
-                  {t("privacy_policy")}
+                  {t("privacy.title")}
                 </a>
                 <a
                   href=""
@@ -144,7 +145,7 @@ const Footer = () => {
                     setOpenModal("terms");
                   }}
                 >
-                  {t("terms_of_service")}
+                  {t("terms.title")}
                 </a>
                 <a
                   href=""
@@ -154,7 +155,7 @@ const Footer = () => {
                     setOpenModal("cookie");
                   }}
                 >
-                  {t("cookie_policy")}
+                  {t("cookie.title")}
                 </a>
                 <a
                   href=""
@@ -164,7 +165,7 @@ const Footer = () => {
                     setOpenModal("security");
                   }}
                 >
-                  {t("security")}
+                  {t("security.title")}
                 </a>
               </div>
             </div>
@@ -173,7 +174,9 @@ const Footer = () => {
           <hr className="border-t border-white/20 my-8" />
           <div className="flex items-center justify-between">
             <p className="split text-center text-[10px] md:text-sm leading-5 text-white/50">
-              {t("copyright")}
+              {t("copyright", {
+                year: new Date().getFullYear(),
+              })}
             </p>
             <div className="flex items-center gap-2">
               {socialIcons.map((social) => {

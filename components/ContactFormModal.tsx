@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
-import MultiSelect from "./MutliSelectDropdown";
+import MultiSelect from "./MultiSelect";
 import Button from "./Button";
 import Image from "next/image";
 import { useParams } from "next/navigation";
@@ -34,7 +34,7 @@ const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "";
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-export default function ContactModal({ open, onClose }: Props) {
+export default function ContactFormModal({ open, onClose }: Props) {
   const params = useParams();
   const t = useTranslations("contact");
 
