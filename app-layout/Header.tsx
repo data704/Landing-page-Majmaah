@@ -107,6 +107,12 @@ const Header = () => {
                     className="md:px-2 py-1.5"
                     variant="contained"
                     text={t("btn-platform-demo-label")}
+                    onClick={() => {
+                      window.open(
+                        "https://dashboard.urimpact.sa/login",
+                        "_blank",
+                      );
+                    }}
                   />
                 </div>
               </div>

@@ -1,15 +1,14 @@
 "use client";
 import Button from "./components/Button";
 import ArrowIcon from "@/public/icons/arrow-down-right.svg";
-import FlexBetween from "./components/FlexBetween";
 import Image from "next/image";
 import React from "react";
 import { gsap, useGSAP } from "@/app/lib/gsap";
 import { useScrambleText } from "@/app/hooks/useScrambleText";
 import { useSplitText } from "@/app/hooks/useSplitText";
 import { useTranslations } from "next-intl";
-import Marquee from "./components/Marquee";
 import useIsMobile from "@/hooks/useIsMobile";
+import Marquee from "@/components/Marquee";
 
 const Hero = () => {
   const container = React.useRef<HTMLDivElement>(null);
@@ -87,7 +86,7 @@ const Hero = () => {
           <div className="w-full overflow-hidden ">
             <Marquee speedPxPerSecond={140} gapPx={64} duration={20}>
               <div className="flex items-center gap-6 whitespace-nowrap">
-                <FlexBetween className="gap-2 items-center">
+                <div className="flex gap-2 items-center">
                   <Image
                     src="/icons/satellite.svg"
                     alt="Satellite Icon"
@@ -97,9 +96,9 @@ const Hero = () => {
                   <p className="text-[16px] font-normal leading-5 opacity-70 text-(--color-secondary)">
                     {t("left-content.marque_label_1")}
                   </p>
-                </FlexBetween>
+                </div>
 
-                <FlexBetween className="gap-2 items-center">
+                <div className="flex gap-2 items-center">
                   <Image
                     src="/icons/tree.svg"
                     alt="Tree Icon"
@@ -109,9 +108,9 @@ const Hero = () => {
                   <p className="text-[16px] font-normal leading-5 opacity-70 text-(--color-secondary)">
                     {t("left-content.marque_label_2")}
                   </p>
-                </FlexBetween>
+                </div>
 
-                <FlexBetween className="gap-2 items-center">
+                <div className="flex gap-2 items-center">
                   <Image
                     src="/icons/audit.svg"
                     alt="Audit Icon"
@@ -121,7 +120,7 @@ const Hero = () => {
                   <p className="text-[16px] font-normal leading-5 opacity-70 text-(--color-secondary)">
                     {t("left-content.marque_label_3")}
                   </p>
-                </FlexBetween>
+                </div>
               </div>
             </Marquee>
           </div>
@@ -131,7 +130,7 @@ const Hero = () => {
             className="relative flex flex-col gap-3 bg-white rounded-lg border border-[#EDF1F3] p-4.5 w-full "
             style={{ boxShadow: "0px 24px 64px 0px #2B3D4F33" }}
           >
-            <FlexBetween className="justify-between">
+            <div className="flex justify-between">
               <p className="font-semibold text-sm leading-5 text-(--color-secondary)">
                 {t("right-content.card_title")}
               </p>
@@ -140,7 +139,7 @@ const Hero = () => {
                   {t("right-content.card_chip_label")}
                 </span>
               </div>
-            </FlexBetween>
+            </div>
             <div className="rounded-lg bg-[#2F603F33] overflow-hidden">
               <Image
                 src="/images/forest-mountain.png"
@@ -154,7 +153,7 @@ const Hero = () => {
                 }}
               />
             </div>
-            <FlexBetween className="justify-between gap-1 md:gap-3">
+            <div className="flex justify-between gap-1 md:gap-3">
               <div className="rounded-lg bg-[#F6F8F9] p-3 text-center w-full">
                 <p className="text-[#2B3D4F] font-bold text-lg leading-7 mb-1 stat-value">
                   {t("right-content.stats1_title")}
@@ -188,7 +187,7 @@ const Hero = () => {
                   {t("right-content.stats3_count_per")}
                 </p>
               </div>
-            </FlexBetween>
+            </div>
             <div
               className="floating-overlay absolute -bottom-7 left-0 md:-left-6 flex items-center gap-3 p-3 rounded-lg bg-[#FFFFFF] border border-[#EDF1F3] shadow-[0px 4px 16px 0px #2B3D4F14]"
               style={{
@@ -201,14 +200,14 @@ const Hero = () => {
                 width={32}
                 height={32}
               />
-              <FlexBetween className="flex-col">
+              <div className="flex flex-col">
                 <p className="text-[#2B3D4F] font-medium text-xs leading-4">
                   {t("right-content.overlay_title")}
                 </p>
                 <p className="text-[#657586] font-normal text-xs leading-4">
                   {t("right-content.overlay_sub_title")}
                 </p>
-              </FlexBetween>
+              </div>
             </div>
           </div>
         </div>

@@ -1,37 +1,4 @@
 {
-  "TabTitle": {
-    "title": "URIMPACT",
-    "description": "Urimpact"
-  },
-  "HeroSection": {
-    "LeftContent": {
-      "chip_label": "Satellite Forest Monitoring",
-      "title": "Begin Monitoring your impact",
-      "span_title": "From Space",
-      "sub_title": "From satellite-verified tree monitoring to structured emissions tracking, one platform for credible climate impact.",
-      "btn_start_monitoring": "Start Monitoring",
-      "btn_monitor_your_trees": "Monitor your Trees",
-      "btn_monitor_your_emissions": "Monitor your Emissions",
-      "marque_label_1": "Daily satellite updates",
-      "marque_label_2": "Multispectral and hyperspectral analysis",
-      "marque_label_3": "Species based carbon sequestration models"
-    },
-    "RightContent": {
-      "card_title": "Project: Amazon Reforestation",
-      "card_chip_label": "Live",
-      "stats1_title": "2,450",
-      "stats1_sub_title": "Trees planted",
-      "stats1_count_per": "+12%",
-      "stats2_title": "94%",
-      "stats2_sub_title": "Survival rate",
-      "stats2_count_per": "+3%",
-      "stats3_title": "12.3t",
-      "stats3_sub_title": "CO₂ captured",
-      "stats3_count_per": "+8%",
-      "overlay_title": "New Detection",
-      "overlay_sub_title": "+156 trees verified"
-    }
-  },
   "TrustedSection": {
     "title": "Our Partners",
     "stats": [
