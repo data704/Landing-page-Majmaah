@@ -19,12 +19,20 @@ export type BenefitItem = {
   description: string
   icon: string
 }
-export type ServicesDetailsProps ={
+export type ServicesDetailsProps = {
   id: number;
-  tag:string;
+  tag: string;
   title: string;
   desc: string;
   sub_desc: string;
   features: string[];
-  bg:string;
+  bg: string;
+}
+
+export type NavbarProps = {
+  label: string;
+  href: string;
+  id: number;
+  children?: NavbarProps[];
+  modalOpen?: boolean;
 }
