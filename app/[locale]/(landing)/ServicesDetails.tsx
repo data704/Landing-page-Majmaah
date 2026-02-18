@@ -103,11 +103,11 @@ const ServicesDetails = () => {
                 <FlexBetween className="gap-4 mb-8">
                   <div className="bg-(--color-primary) rounded-[0.5px] w-1.5" />
                   <div className="flex flex-col gap-4">
-                    <p className="split font-bold text-[clamp(24px,2vw,40px)] leading-8">
+                    <p className="split font-bold text-[clamp(24px,2vw,40px)]">
                       {service.tag}
                     </p>
-                    <p className="split font-normal text-[16px] leading-6 text-[#5B6671]">
-                      {service.tag}
+                    <p className="split font-normal text-[16px] text-[#5B6671]">
+                      {service.title}
                     </p>
                   </div>
                 </FlexBetween>
