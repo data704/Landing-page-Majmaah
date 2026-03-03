@@ -97,7 +97,7 @@ const Hero = () => {
               variant="contained"
               icon={ArrowIcon}
               onClick={() => {
-                window.open("https://dashboard.urimpact.sa/login", "_blank");
+                window.open("https://emissionplatform.urimpact.sa/login", "_blank");
               }}
               {...(isMobile && {
                 style: { fontSize: "12px" },
