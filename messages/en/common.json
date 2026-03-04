@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "URIMPACT",
+    "description": "Urimpact landing page"
+  },
+  "navbar": {
+    "contact-label": "Contact Us",
+    "solutions-label": "Solutions",
+    "solutions-emission-management-label": "Emission Management",
+    "solutions-nature-based-solutions-label": "Carbon Footprint",
+    "see-forest-label": "See Forest",
+    "btn-platform-demo-label": "Platform Demo"
+  },
+
+  "contact": {
+    "title": "Please Fill This Details",
+    "submit_button": "Send",
+    "name_placeholder": "Full Name",
+    "email_placeholder": "Email Address",
+    "company_placeholder": "Company Name",
+    "industry_placeholder": "Select Industry",
+    "job_role_placeholder": "Job Role",
+    "country_placeholder": "Country",
+    "message_placeholder": "Your Message",
+    "industry_options": [
+      { "label": "Finance", "value": "finance" },
+      { "label": "Agriculture", "value": "agriculture" },
+      { "label": "Technology", "value": "technology" },
+      { "label": "Healthcare", "value": "health" },
+      { "label": "Manufacturing", "value": "manufacturing" }
+    ]
+  },
+
+  "footer": {
+    "logo_alt": "URIMPACT Logo",
+    "description": "URIMPACT is a leading platform for carbon footprint management and sustainability solutions, helping organizations achieve their environmental goals.",
+    "newsletter_title": "Subscribe to our newsletter",
+    "email_placeholder": "Enter your email",
+    "subscribe_button_aria": "Subscribe to newsletter",
+    "send_icon_alt": "Send",
+    "legal_title": "Legal",
+    "copyright": "© {year} URIMPACT. All rights reserved.",
+    "privacy": {
+      "title": "Privacy Policy",
+      "list": [
+        "We collect basic user information such as name, email, and organization during signup.",
+        "Satellite monitoring data is stored securely and used only for verification.",
+        "Your data is never sold to third-party advertisers.",
+        "We use encryption to protect sensitive documents and reports.",
+        "You may request deletion of your account at any time.",
+        "Cookies may be used to enhance platform experience.",
+        "Emails are sent only with consent.",
+        "Location data is used strictly for monitoring accuracy.",
+        "Uploaded documents remain your intellectual property.",
+        "Analytics stored for performance improvement.",
+        "Data access restricted internally.",
+        "Policy updates will be emailed to users."
+      ]
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "list": [
+        "Users must provide accurate project information.",
+        "Satellite images authorized only for verification.",
+        "Misuse may lead to account suspension.",
+        "Subscription fees non-refundable except policy conditions.",
+        "Do not reverse-engineer platform algorithms.",
+        "Reports can be shared publicly with attribution.",
+        "Users responsible for uploaded data.",
+        "Credentials must not be shared.",
+        "Platform features may update anytime.",
+        "Not liable for environmental changes.",
+        "Legal jurisdiction applies for disputes.",
+        "Continued use means acceptance of terms."
+      ]
+    },
+    "cookie": {
+      "title": "Cookie Policy",
+      "list": [
+        "Cookies store login sessions.",
+        "Analytics improve dashboard performance.",
+        "Tracks user interaction to improve UX.",
+        "No personal data collected without consent.",
+        "Can disable cookies anytime.",
+        "Used for map visualization functions.",
+        "Third-party analytics cookies may be used.",
+        "Preferences saved until cleared.",
+        "No marketing cookies used.",
+        "Performance cookies detect errors.",
+        "Temporary cookies expire on logout.",
+        "Use implies cookie consent."
+      ]
+    },
+    "security": {
+      "title": "Security",
+      "list": [
+        "End-to-end password encryption.",
+        "Secure cloud data storage.",
+        "Firewall layers block unauthorized access.",
+        "Monthly security audits.",
+        "2FA recommended for accounts.",
+        "Access logs monitored.",
+        "Backup servers prevent data loss.",
+        "Sensitive reports require verification.",
+        "Integrations reviewed for security.",
+        "No data sharing without approval.",
+        "Annual staff security training.",
+        "Breach alerts within 72 hours."
+      ]
+    }
+  }
+}
